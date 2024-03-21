@@ -43,16 +43,16 @@ public class ShopRepositoryTest {
         Product product2 = new Product(18, "холодильник", 15_000);
         Product product3 = new Product(19, "телевизор", 10_000);
         Product product4 = new Product(20, "тостер", 5_000);
+        Product product5 = new Product(21, "блендер",3_000);
 
         repo.add(product1);
         repo.add(product2);
         repo.add(product3);
         repo.add(product4);
-        repo.add(new Product(21, "блендер",3_000));
-
+        repo.add(product5);
 
         Product[] actual = repo.findAll();
-        Product[] expected = {product1, product2, product3, product4};
+        Product[] expected = {product1, product2, product3, product4, product5};
 
         Assertions.assertArrayEquals(expected, actual);
     }
